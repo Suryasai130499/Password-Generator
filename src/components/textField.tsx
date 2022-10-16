@@ -1,17 +1,11 @@
-import {
-  component$,
-  useContext,
-  useWatch$,
-  $,
-  useSignal,
-} from '@builder.io/qwik';
+import { component$, useContext, useWatch$, $, useRef } from '@builder.io/qwik';
 import { StateInterface } from './interfaces';
 import { myStateContext } from '~/routes';
 import './textField.css';
 
 const TextField = component$(() => {
   const state = useContext<StateInterface>(myStateContext);
-  const successRef = useSignal<HTMLParagraphElement>();
+  const successRef = useRef<HTMLParagraphElement>();
 
   const upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz';
@@ -56,9 +50,10 @@ const TextField = component$(() => {
 
   const handleCopy = $(() => {
     navigator.clipboard.writeText(state.password).then(() => {
-      successRef.untrackedValue.classList.add('show');
+      console.log(successRef);
+      successRef.current?.classList.add('show');
       setTimeout(() => {
-        successRef.untrackedValue.classList.remove('show');
+        successRef.current?.classList.remove('show');
       }, 2000);
     });
   });

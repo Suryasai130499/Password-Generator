@@ -1,15 +1,16 @@
-import { component$, useContext, useSignal, $ } from '@builder.io/qwik';
+import { component$, useContext, useRef, $ } from '@builder.io/qwik';
 import { StateInterface } from '../interfaces';
 import { myStateContext } from '~/routes';
 import './range.css';
 
 const Range = component$(() => {
-  const rangeRef = useSignal<HTMLInputElement>();
+  const rangeRef = useRef<HTMLInputElement>();
 
   const state = useContext<StateInterface>(myStateContext);
 
   const changeSlider = $(() => {
-    state.characterCount = rangeRef.untrackedValue.value;
+    if (rangeRef.current?.value)
+      state.characterCount = Number.parseInt(rangeRef.current?.value);
   });
 
   return (

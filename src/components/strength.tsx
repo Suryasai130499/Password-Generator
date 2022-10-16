@@ -1,4 +1,4 @@
-import { component$, useContext } from '@builder.io/qwik';
+import { component$, useContext, useClientEffect$ } from '@builder.io/qwik';
 import { StateInterface } from './interfaces';
 import { myStateContext } from '~/routes';
 import './strength.css';
@@ -9,7 +9,10 @@ const Strength = component$(() => {
 
   const state = useContext<StateInterface>(myStateContext);
 
-  state.strength = state.checkedCount + 1;
+  useClientEffect$(({ track }) => {
+    const checkedCount = track(() => state.checkedCount);
+    state.strength = checkedCount + 1;
+  });
 
   return (
     <div class="strength">

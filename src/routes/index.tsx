@@ -7,7 +7,6 @@ import {
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { StateInterface } from '~/components/interfaces';
 import './index.css';
-import Button from '~/components/interactive-components/ button';
 import Checkbox from '~/components/interactive-components/checkbox';
 import Range from '~/components/interactive-components/range';
 import Strength from '~/components/strength';

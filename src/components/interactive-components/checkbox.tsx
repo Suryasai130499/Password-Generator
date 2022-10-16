@@ -1,17 +1,17 @@
 import { v4 as uuidv4 } from 'uuid';
-import { component$, useContext, useSignal, $ } from '@builder.io/qwik';
+import { component$, useContext, useRef, $ } from '@builder.io/qwik';
 import { StateInterface } from '../interfaces';
 import { myStateContext } from '~/routes';
 import './checkbox.css';
 
 const Checkbox = component$((props: { text: string; dataUsed: string }) => {
   const checkboxID = uuidv4();
-  const checkBoxRef = useSignal<HTMLInputElement>();
+  const checkBoxRef = useRef<HTMLInputElement>();
 
   const state = useContext<StateInterface>(myStateContext);
 
   const handleClick = $(() => {
-    if (checkBoxRef.untrackedValue.checked) {
+    if (checkBoxRef.current?.checked) {
       if (props.dataUsed === 'upper') {
         state.upper = true;
       }
@@ -42,10 +42,25 @@ const Checkbox = component$((props: { text: string; dataUsed: string }) => {
     }
   });
 
+  const getChecked = () => {
+    if (props.dataUsed === 'upper' && state.upper === true) {
+      return true;
+    }
+    if (props.dataUsed === 'lower' && state.lower === true) {
+      return true;
+    }
+    if (props.dataUsed === 'numbers' && state.numbers === true) {
+      return true;
+    }
+    if (props.dataUsed === 'symbols' && state.symbols === true) {
+      return true;
+    }
+  };
+
   return (
     <div>
       <input
-        checked={state[props.dataUsed] === true}
+        checked={getChecked()}
         ref={checkBoxRef}
         onClick$={handleClick}
         class="styled-checkbox"
