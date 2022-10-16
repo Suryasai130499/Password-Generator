@@ -7,7 +7,7 @@ import {
 } from '@builder.io/qwik';
 import { StateInterface } from './interfaces';
 import { myStateContext } from '~/routes';
-import './textfield.css';
+import './textField.css';
 
 const TextField = component$(() => {
   const state = useContext<StateInterface>(myStateContext);
