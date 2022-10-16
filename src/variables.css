@@ -1,0 +1,16 @@
+:root {
+  --light-grey: hsl(251, 9%, 53%);
+  --grey: hsl(247, 11%, 15%);
+  --dark-grey: hsl(248, 15%, 11%);
+  --almost-white: hsl(252, 11%, 91%);
+  --strong: hsl(127, 100%, 82%);
+  --medium: hsl(42, 91%, 68%);
+  --weak: hsl(13, 95%, 66%);
+  --very-weak: hsl(0, 91%, 63%);
+
+  --fs-100: 18px;
+  --fs-400: 24px;
+  --fs-700: 32px;
+
+  --fw-700: 700;
+}

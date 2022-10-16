@@ -1,0 +1,82 @@
+.strength {
+  background: var(--dark-grey);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.value {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.boxes {
+  margin-inline-start: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boxes > * {
+  padding-inline: 0.15rem;
+  height: 90%;
+  border: 2px solid var(--almost-white);
+}
+
+.boxes[data-scheme='tooWeak'] .one {
+  background: var(--very-weak);
+  border: 2px solid var(--very-weak);
+}
+
+.boxes[data-scheme='weak'] .one {
+  background: var(--weak);
+  border: 2px solid var(--weak);
+}
+
+.boxes[data-scheme='weak'] .two {
+  background: var(--weak);
+  border: 2px solid var(--weak);
+}
+
+.boxes[data-scheme='medium'] .one {
+  background: var(--medium);
+  border: 2px solid var(--medium);
+}
+
+.boxes[data-scheme='medium'] .two {
+  background: var(--medium);
+  border: 2px solid var(--medium);
+}
+
+.boxes[data-scheme='medium'] .three {
+  background: var(--medium);
+  border: 2px solid var(--medium);
+}
+
+.boxes[data-scheme='strong'] .one {
+  background: var(--strong);
+  border: 2px solid var(--strong);
+}
+
+.boxes[data-scheme='strong'] .two {
+  background: var(--strong);
+  border: 2px solid var(--strong);
+}
+
+.boxes[data-scheme='strong'] .three {
+  background: var(--strong);
+  border: 2px solid var(--strong);
+}
+
+.boxes[data-scheme='strong'] .four {
+  background: var(--strong);
+  border: 2px solid var(--strong);
+}

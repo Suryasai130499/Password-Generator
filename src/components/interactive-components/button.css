@@ -1,0 +1,16 @@
+.generate {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--strong);
+  color: var(--dark-grey);
+  border: 1px solid var(--strong);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: var(--fw-700);
+}
+
+.generate:hover {
+  background: var(--dark-grey);
+  color: var(--strong);
+}

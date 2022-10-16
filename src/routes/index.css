@@ -1,0 +1,14 @@
+.index__wrapper {
+  width: 40vw;
+  height: auto;
+}
+
+.selectDiv {
+  margin-block-start: 2rem;
+  padding: 2rem;
+  background: var(--grey);
+}
+
+.selectDiv > * + * {
+  margin-block: 1rem;
+}
